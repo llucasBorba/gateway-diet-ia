@@ -1,6 +1,16 @@
--- This file allow to write SQL commands that will be emitted in test and dev.
--- The commands are commented as their support depends of the database
--- insert into myentity (id, field) values(1, 'field-1');
--- insert into myentity (id, field) values(2, 'field-2');
--- insert into myentity (id, field) values(3, 'field-3');
--- alter sequence myentity_seq restart with 4;
+INSERT INTO Patient (id, name, weight, height, age, restrictions, caloricGoal) VALUES
+                                                                                   (1, 'Mickey Mouse', 25, 90, 10, 'none', 'MAINTENANCE'),
+                                                                                   (2, 'Donald Duck', 30, 95, 12, 'lactose', 'SURPLUS'),
+                                                                                   (3, 'Goofy', 40, 120, 15, 'none', 'SURPLUS'),
+                                                                                   (4, 'SpongeBob SquarePants', 20, 60, 9, 'gluten', 'MAINTENANCE'),
+                                                                                   (5, 'Patrick Star', 50, 100, 11, 'none', 'DEFICIT'),
+                                                                                   (6, 'Bugs Bunny', 28, 85, 13, 'none', 'MAINTENANCE'),
+                                                                                   (7, 'Daffy Duck', 32, 92, 12, 'seafood', 'DEFICIT'),
+                                                                                   (8, 'Scooby-Doo', 45, 110, 14, 'none', 'SURPLUS'),
+                                                                                   (9, 'Shaggy Rogers', 42, 115, 17, 'none', 'SURPLUS'),
+                                                                                   (10, 'Tom Cat', 35, 100, 13, 'none', 'DEFICIT'),
+                                                                                   (11, 'Jerry Mouse', 18, 50, 8, 'none', 'MAINTENANCE'),
+                                                                                   (12, 'Fred Flintstone', 80, 140, 35, 'none', 'SURPLUS'),
+                                                                                   (13, 'Barney Rubble', 75, 135, 34, 'none', 'MAINTENANCE'),
+                                                                                   (14, 'Johnny Bravo', 85, 180, 28, 'none', 'SURPLUS'),
+                                                                                   (15, 'Dexter', 25, 70, 10, 'none', 'MAINTENANCE');                                                                       (15, 'Dexter', 25, 70, 10, 'none', 'MAINTENANCE');
