@@ -36,4 +36,7 @@ public class PatientService {
     @Tool("Exclui um paciente do banco com base no Id dele (PatientId)")
     @Transactional
     public void deleteById(long id){Patient.deleteById(id);}
+
+    @Tool("Retorna as informações de um paciente com base no nome dele (String name)")
+    public Patient findByName(String name){return Patient.findByName(name);}
 }

@@ -25,4 +25,8 @@ public class Patient extends PanacheEntity {
         this.height = height;
         this.caloricGoal = caloricGoal;
     }
+
+    public static Patient findByName(String name) {
+        return find("name",name).singleResult();
+    }
 }
