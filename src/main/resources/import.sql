@@ -14,3 +14,8 @@ INSERT INTO Patient (id, name, weight, height, age, restrictions, caloricGoal) V
  (13, 'Barney Rubble', 75, 135, 34, 'none', 'MAINTENANCE'),
  (14, 'Johnny Bravo', 85, 180, 28, 'none', 'SURPLUS'),
  (15, 'Dexter', 25, 70, 10, 'none', 'MAINTENANCE');
+
+SELECT setval(
+               pg_get_serial_sequence('patient', 'id'),
+               (SELECT MAX(id) FROM patient)
+           );

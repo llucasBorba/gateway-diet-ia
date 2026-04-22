@@ -1,9 +1,12 @@
 package entity;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
+import io.quarkus.panache.common.Sort;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
+
+import java.util.List;
 
 @Entity
 public class Patient extends PanacheEntity {
@@ -27,6 +30,10 @@ public class Patient extends PanacheEntity {
     }
 
     public static Patient findByName(String name) {
-        return find("name",name).singleResult();
+        return find("name",name).firstResult();
+    }
+
+    public static List<Patient> filterByCaloricGoal(CaloricGoal caloricGoal) {
+        return list("caloricGoal", Sort.by("name"),caloricGoal);
     }
 }

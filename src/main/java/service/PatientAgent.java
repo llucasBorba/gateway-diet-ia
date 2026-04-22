@@ -4,7 +4,7 @@ import dev.langchain4j.service.SystemMessage;
 import dev.langchain4j.service.UserMessage;
 import io.quarkiverse.langchain4j.RegisterAiService;
 
-@RegisterAiService(tools = PatientService.class)
+@RegisterAiService(tools = PatientTools.class)
 public interface PatientAgent {
     @SystemMessage("""
         Você é um assistente administrativo de uma clínica.
