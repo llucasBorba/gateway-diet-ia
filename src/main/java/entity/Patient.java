@@ -29,6 +29,18 @@ public class Patient extends PanacheEntity {
         this.caloricGoal = caloricGoal;
     }
 
+    @Override
+    public String toString() {
+        return "Patient{" +
+                "name='" + name + '\'' +
+                ", weight=" + weight +
+                ", height=" + height +
+                ", age=" + age +
+                ", restrictions='" + restrictions + '\'' +
+                ", caloricGoal=" + caloricGoal +
+                '}';
+    }
+
     public static Patient findByName(String name) {
         return find("name",name).firstResult();
     }

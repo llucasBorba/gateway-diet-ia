@@ -1,6 +1,7 @@
 package controller;
 
 import dto.RequestDTO;
+import dto.ResponseDTO;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.POST;
