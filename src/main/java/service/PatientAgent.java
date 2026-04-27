@@ -3,10 +3,12 @@ package service;
 import dev.langchain4j.service.SystemMessage;
 import dev.langchain4j.service.UserMessage;
 import dev.langchain4j.service.guardrail.InputGuardrails;
-import dto.ResponseDTO;
+import dev.langchain4j.service.guardrail.OutputGuardrails;
 import io.quarkiverse.langchain4j.RegisterAiService;
 import io.quarkiverse.langchain4j.mcp.runtime.McpToolBox;
 import security.InjectionGuard;
+import security.JsonStructureGuard;
+import security.ToneJudgeGuard;
 
 @RegisterAiService()
 public interface PatientAgent {
@@ -17,5 +19,9 @@ public interface PatientAgent {
         """)
     @McpToolBox("patient-server")
     @InputGuardrails(InjectionGuard.class)
+//    @OutputGuardrails({
+//            ToneJudgeGuard.class,
+//            JsonStructureGuard.class})
+    @OutputGuardrails(ToneJudgeGuard.class)
     String chat(@UserMessage String request);
 }
